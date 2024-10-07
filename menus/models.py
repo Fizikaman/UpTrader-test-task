@@ -5,6 +5,10 @@ from django.urls import reverse, NoReverseMatch
 class Menu(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
+    class Meta:
+        verbose_name = "Меню"
+        verbose_name_plural = "Меню"
+
     def __str__(self):
         return self.name
 
