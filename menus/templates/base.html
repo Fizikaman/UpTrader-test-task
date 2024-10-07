@@ -1,0 +1,33 @@
+{% load static %}
+{% load draw_menu %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            {% if menu %}
+                {% render_menu menu %}
+            {% else %}
+                <p>Меню не найдено</p>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Тестовое для UpTrader. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
